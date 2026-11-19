@@ -127,7 +127,7 @@ try {
           assert.equal(tag, 'A', 'Remote runtime asset');
           assert.equal(url.protocol, 'https:');
           if (!draft && url.pathname.includes('/releases/')) {
-            assert.ok([release, captureRelease].some(identity => identity.assets.some(a => a.url === url.href) || url.href === `https://github.com/Mytikas-Monster/Navzeroth/releases/tag/${identity.tag}`), `Unverified release link: ${value}`);
+            assert.ok([release, captureRelease].some(identity => identity.assets.some(a => a.url === url.href) || url.href === `https://github.com/Laymer/Navzeroth/releases/tag/${identity.tag}`), `Unverified release link: ${value}`);
           }
         }
       }

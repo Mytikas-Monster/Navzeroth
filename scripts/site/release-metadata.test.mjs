@@ -14,7 +14,7 @@ test('stable requires its complete material/source artifact set and unsigned pol
   const stable = clone(rc);
   stable.version = '1.0.0'; stable.tag = 'v1.0.0'; stable.prerelease = false;
   stable.assets = rc.assets.map(a => ({ ...a, name:a.name.replaceAll('1.0.0-rc.1', '1.0.0'), url:a.url.replaceAll('1.0.0-rc.1', '1.0.0') }));
-  for (const name of ['AzerothNavigator-materials-1.0.0.zip', 'RELEASE_MATERIALS.json', 'RELEASE_ASSETS.json']) stable.assets.push({name,bytes:1,sha256:'a'.repeat(64),url:`https://github.com/Mytikas-Monster/Navzeroth/releases/download/v1.0.0/${name}`});
+  for (const name of ['AzerothNavigator-materials-1.0.0.zip', 'RELEASE_MATERIALS.json', 'RELEASE_ASSETS.json']) stable.assets.push({name,bytes:1,sha256:'a'.repeat(64),url:`https://github.com/Laymer/Navzeroth/releases/download/v1.0.0/${name}`});
   assert.equal(validateRelease(stable, policy), stable);
   for (const mutate of [x => x.assets.pop(), x => x.assets.push(x.assets[0]), x => x.prerelease = true, x => x.signature = 'signed']) {
     const altered = clone(stable); mutate(altered); assert.throws(() => validateRelease(altered, policy));

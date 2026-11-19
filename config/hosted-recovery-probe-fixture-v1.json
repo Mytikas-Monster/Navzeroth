@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "kind": "historical_full_pack_engineering_fixture_not_installer_acceptance",
-  "repository": "Mytikas-Monster/Navzeroth",
+  "repository": "Laymer/Navzeroth",
   "artifact_id": 12405859488,
   "artifact_run_id": 39641767585,
   "artifact_name": "azeroth-navigator-windows-90e0d4dd3e574b1b0760e8f4a7a77f28933b02cc",

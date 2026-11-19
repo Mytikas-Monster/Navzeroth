@@ -22,7 +22,7 @@ export function validateRelease(release, policy) {
   for (const asset of release.assets) {
     assert.ok(Number.isSafeInteger(asset.bytes) && asset.bytes > 0);
     assert.match(asset.sha256, /^[a-f0-9]{64}$/);
-    assert.equal(asset.url, `https://github.com/Mytikas-Monster/Navzeroth/releases/download/${release.tag}/${asset.name}`);
+    assert.equal(asset.url, `https://github.com/Laymer/Navzeroth/releases/download/${release.tag}/${asset.name}`);
   }
   return release;
 }
