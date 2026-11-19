@@ -7,8 +7,9 @@ IDs and all release asset IDs matched on both sides of the transfer.
 
 The current field manual is at https://mytikas-monster.github.io/Navzeroth/.
 The published candidate is v1.0.0-rc.1. The v1.0.0 release remains a draft.
-When preparing new signed release evidence, review the organization identity in
-the draft verification policy and bind new evidence to that identity. The
+When preparing new signed release evidence, bind the next candidate to
+`config/organization-release-draft-smoke-v1.json` and freshly review its run and
+artifact receipts under the organization. The
 existing v1 review records refer to the original policy digest and retain their
 historical owner. The desktop application identifier and its data directory
 also retain their existing identity for installed users.
@@ -16,3 +17,5 @@ also retain their existing identity for installed users.
 Browser validation passed across all five public pages at 360, 768, and 1440 px
 including links, keyboard access and capture provenance. All four publication
 metadata tests and twelve isolated hosted-fixture tests passed.
+The CLI draft smoke unit tests passed for the current organization, the original
+owner on historical source trees, and rejection of cross-owner receipts.
