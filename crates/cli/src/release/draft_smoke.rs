@@ -8,7 +8,8 @@ use azeroth_core::{
 use serde::{Deserialize, de::DeserializeOwned};
 use std::path::Path;
 
-const POLICY: &str = "config/release-draft-smoke-v1.json";
+const POLICY: &str = "config/organization-release-draft-smoke-v1.json";
+const HISTORICAL_POLICY: &str = "config/release-draft-smoke-v1.json";
 const MAX: usize = 1024 * 1024;
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -220,7 +221,17 @@ pub(super) fn verify(
     let Some(refs) = &evidence.draft_installer_smoke else {
         return Ok(());
     };
-    let policy: Policy = json(&budget.read(&root.join(POLICY), 64 * 1024)?)?;
+    // Pre-transfer source trees carry only the personal repository's policy.
+    // A current source tree always checks the organization policy, even for
+    // receipts claiming the old owner.
+    let policy_path = if std::fs::symlink_metadata(root.join(POLICY))
+        .is_err_and(|error| error.kind() == std::io::ErrorKind::NotFound)
+    {
+        HISTORICAL_POLICY
+    } else {
+        POLICY
+    };
+    let policy: Policy = json(&budget.read(&root.join(policy_path), 64 * 1024)?)?;
     let raw: RawResult = read(root, budget, &refs.raw_result)?;
     let p: Provenance = read(root, budget, &refs.provenance)?;
     let review: Review = read(root, budget, &refs.independent_review)?;
@@ -432,7 +443,7 @@ mod tests {
             fs::create_dir_all(root.join("config")).unwrap();
             fs::write(
                 root.join(POLICY),
-                include_bytes!("../../../../config/release-draft-smoke-v1.json"),
+                include_bytes!("../../../../config/organization-release-draft-smoke-v1.json"),
             )
             .unwrap();
             let workflow = b"reviewed workflow bytes";
@@ -444,9 +455,9 @@ mod tests {
             .unwrap();
             let identity = json!({"source_commit":SOURCE,"production_sha256":PROD,"installer_sha256":PROD,"release_tag":"v1.0.0","release_id":11,"asset_id":12,"asset_name":"setup.exe","asset_bytes":50,"run_id":13,"run_attempt":2,"job_id":14,"workflow_sha256":hash(workflow)});
             let raw = json!({"schema_version":1,"identity":identity,"phase":"draft","human_performed":false,"downloaded":true,"unsigned_verified":true,"installation_verified":true,"first_start_verified":true,"bundled_resources_verified":true,"planning_verified":true,"restart_persistence_verified":true,"ui_interaction_verified":true});
-            let provenance = json!({"schema_version":1,"identity":identity,"repository":"Laymer/Navzeroth","workflow_path":".github/workflows/verify-release-downloads.yml","job_name":"Verify downloaded unsigned release","runner_environment":"github-hosted","os":"Windows","phase":"draft"});
+            let provenance = json!({"schema_version":1,"identity":identity,"repository":"Mytikas-Monster/Navzeroth","workflow_path":".github/workflows/verify-release-downloads.yml","job_name":"Verify downloaded unsigned release","runner_environment":"github-hosted","os":"Windows","phase":"draft"});
             let review = json!({"schema_version":1,"identity":identity,"status":"pass","reviewer":"independent synthetic engineering reviewer","recorded_at":"2026-10-23T12:00:00Z","human_performed":false});
-            let run = json!({"id":13,"run_attempt":2,"head_sha":SOURCE,"repository":{"full_name":"Laymer/Navzeroth"},"path":".github/workflows/verify-release-downloads.yml","event":"workflow_dispatch","status":"completed","conclusion":"success"});
+            let run = json!({"id":13,"run_attempt":2,"head_sha":SOURCE,"repository":{"full_name":"Mytikas-Monster/Navzeroth"},"path":".github/workflows/verify-release-downloads.yml","event":"workflow_dispatch","status":"completed","conclusion":"success"});
             let job = json!({"id":14,"run_id":13,"run_attempt":2,"head_sha":SOURCE,"name":"Verify downloaded unsigned release","status":"completed","conclusion":"success","labels":["windows-2025"],"runner_group_name":"GitHub Actions","steps":[{"name":"Download and verify exact release","status":"completed","conclusion":"success"}]});
             let release = json!({"id":11,"tag_name":"v1.0.0","draft":true,"prerelease":false,"assets":[{"id":12,"name":"setup.exe","size":50}]});
             let download = json!({"schema_version":3,"phase":"draft","version":"1.0.0","source_commit":SOURCE,"installer_signature":"NotSigned","application_signature":"NotSigned","dependency_closure_verified":true,"addon_zip_matches_source":true,"workflow_run_id":"13","workflow_run_attempt":"2","assets":[{"name":"setup.exe","bytes":50,"sha256":PROD}]});
@@ -509,6 +520,23 @@ mod tests {
         let mut e = f.evidence();
         e.draft_installer_smoke = None;
         assert!(verify(&f.root, &e, SOURCE, PROD, "1.0.0", &mut Budget::default()).is_ok());
+    }
+    #[test]
+    fn selects_repository_policy_from_the_source_tree() {
+        let mut f = Fixture::new();
+        fs::write(
+            f.root.join(HISTORICAL_POLICY),
+            include_bytes!("../../../../config/release-draft-smoke-v1.json"),
+        )
+        .unwrap();
+        f.provenance["repository"] = json!("Laymer/Navzeroth");
+        f.run["repository"]["full_name"] = json!("Laymer/Navzeroth");
+        assert!(f.check().is_err());
+        fs::remove_file(f.root.join(POLICY)).unwrap();
+        assert!(f.check().is_ok());
+        f.provenance["repository"] = json!("Mytikas-Monster/Navzeroth");
+        f.run["repository"]["full_name"] = json!("Mytikas-Monster/Navzeroth");
+        assert!(f.check().is_err());
     }
     #[test]
     fn outcome_and_identity_mutations_fail_even_with_rehashed_evidence() {
@@ -731,7 +759,7 @@ mod tests {
         for path in ["../outside.yml", "/tmp/outside.yml", "C:\\outside.yml"] {
             let f = Fixture::new();
             let mut policy: Value = serde_json::from_slice(include_bytes!(
-                "../../../../config/release-draft-smoke-v1.json"
+                "../../../../config/organization-release-draft-smoke-v1.json"
             ))
             .unwrap();
             policy["workflow_path"] = json!(path);
