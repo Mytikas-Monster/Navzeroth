@@ -558,7 +558,7 @@
     },
     {
       "id": "wago-tools-wowf",
-      "revision": "3dd44c0a1760025f8103ce6a601aea10ddfe81ae",
+      "revision": "1599d33838d18eb4105c4e525a726f97deaf3d77",
       "publisher": "wago.tools",
       "origin": {
         "edition": "wow_forever",
@@ -636,9 +636,9 @@
           "transformation": "world_to_content_v4"
         },
         {
-          "path": "content/source-materials/objects/32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
-          "bytes": 1443725,
-          "sha256": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+          "path": "content/source-materials/objects/4dc3125995aeda05fe20b4c4b97def50e8444fd2e47bdbfeab97e5ee09533bb7",
+          "bytes": 1443778,
+          "sha256": "4dc3125995aeda05fe20b4c4b97def50e8444fd2e47bdbfeab97e5ee09533bb7",
           "url": "https://wago.tools/db2/Item/csv?product=wowf&build=1.60.1.70245",
           "fields": [
             "items.items",
@@ -650,9 +650,9 @@
           "transformation": "world_to_content_v4"
         },
         {
-          "path": "content/source-materials/objects/fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
-          "bytes": 5345571,
-          "sha256": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+          "path": "content/source-materials/objects/40a846d609a35d6fa4df63dfe0fed4166a96e753d2fe8f7f87fb0023ab50a1b0",
+          "bytes": 5366727,
+          "sha256": "40a846d609a35d6fa4df63dfe0fed4166a96e753d2fe8f7f87fb0023ab50a1b0",
           "url": "https://wago.tools/db2/ItemSparse/csv?product=wowf&build=1.60.1.70245",
           "fields": [
             "items.items",
@@ -706,9 +706,9 @@
           "transformation": "world_to_content_v4"
         },
         {
-          "path": "content/source-materials/objects/d81a61397d9ecbc467a77767c4a3c231e9041ed08005c1716cdba6d3fe320ab5",
-          "bytes": 2246473,
-          "sha256": "d81a61397d9ecbc467a77767c4a3c231e9041ed08005c1716cdba6d3fe320ab5",
+          "path": "content/source-materials/objects/a5878d2a6a49d562818cd1b4d2f8e7e861bc9a023900648b7ec8ec3ccc5ed20d",
+          "bytes": 2246037,
+          "sha256": "a5878d2a6a49d562818cd1b4d2f8e7e861bc9a023900648b7ec8ec3ccc5ed20d",
           "url": "https://wago.tools/db2/Spell/csv?product=wowf&build=1.60.1.70245",
           "fields": [
             "items.items",
@@ -720,9 +720,9 @@
           "transformation": "world_to_content_v4"
         },
         {
-          "path": "content/source-materials/objects/8bb6142b47be66c5110c7f64e53bbc27223a1d2bde739dafde1eec5c92a42649",
-          "bytes": 316009,
-          "sha256": "8bb6142b47be66c5110c7f64e53bbc27223a1d2bde739dafde1eec5c92a42649",
+          "path": "content/source-materials/objects/32bee963f239af222f384e58abf65e646ea9de2f21b74b9f069847ec0fccbe44",
+          "bytes": 316111,
+          "sha256": "32bee963f239af222f384e58abf65e646ea9de2f21b74b9f069847ec0fccbe44",
           "url": "https://wago.tools/db2/SpellLevels/csv?product=wowf&build=1.60.1.70245",
           "fields": [
             "items.items",
@@ -734,9 +734,9 @@
           "transformation": "world_to_content_v4"
         },
         {
-          "path": "content/source-materials/objects/bd8dc963dd691c69aff531464636e7b5a944efeedb773895e7b2c4a0fb7c38b4",
-          "bytes": 851160,
-          "sha256": "bd8dc963dd691c69aff531464636e7b5a944efeedb773895e7b2c4a0fb7c38b4",
+          "path": "content/source-materials/objects/092602f9436e921ad62ea083f153028279a172bdf94c74f0c51f489c8f00bfc5",
+          "bytes": 851455,
+          "sha256": "092602f9436e921ad62ea083f153028279a172bdf94c74f0c51f489c8f00bfc5",
           "url": "https://wago.tools/db2/SpellName/csv?product=wowf&build=1.60.1.70245",
           "fields": [
             "items.items",
@@ -2709,7 +2709,7 @@
     },
     {
       "id": "gen-world-db2-wow-forever-1.60.1.70245",
-      "revision": "5396b1179190e14fea898f242fecf20572cb9608fc868bdaf51cac1daac2547c",
+      "revision": "4e565fbe39683628c7ae6eb399f260a5903a63c58ab321b4c8ce1217d0428887",
       "publisher": "Navzeroth data generators (gen_world_db2); https://github.com/Laymer/Navzeroth",
       "origin": {
         "edition": "wow_forever",
@@ -2733,7 +2733,7 @@
       },
       "retrieval": {
         "method": "manual_local",
-        "max_total_bytes": 59390664,
+        "max_total_bytes": 59599096,
         "minimum_interval_ms": 1000,
         "max_requests": 10,
         "access_evidence": {
@@ -2746,9 +2746,9 @@
       "files": [
         {
           "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0000.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/b6020c7d278ca96238884328cdf8a8be3875178f7d525864cbd1e83f2f0a7ddc",
-          "sha256": "b6020c7d278ca96238884328cdf8a8be3875178f7d525864cbd1e83f2f0a7ddc",
-          "bytes": 8322998,
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/7036da7bf6bcdc5f4f51dfd22882ea5461464a631c1d3c84fa91050fca8307f9",
+          "sha256": "7036da7bf6bcdc5f4f51dfd22882ea5461464a631c1d3c84fa91050fca8307f9",
+          "bytes": 8323076,
           "fields": [
             "class_roles.base_level",
             "class_roles.class_mask",
@@ -2784,9 +2784,9 @@
         },
         {
           "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0001.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/b1a22f3542cb9abc8c882c3e61002f058da0fd07dadc679bb3ebe98d3fd19947",
-          "sha256": "b1a22f3542cb9abc8c882c3e61002f058da0fd07dadc679bb3ebe98d3fd19947",
-          "bytes": 8322966,
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/471ba3bd5c93b39384d57bded444c876cd06e980bc47e0320ab262a758273036",
+          "sha256": "471ba3bd5c93b39384d57bded444c876cd06e980bc47e0320ab262a758273036",
+          "bytes": 8322967,
           "fields": [
             "equipment.allowable_class",
             "equipment.allowable_race",
@@ -2807,9 +2807,9 @@
         },
         {
           "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0002.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/aab0d047464994b8504a9b2c39271f052f7f7828e519b95b58b64a036da7d7d4",
-          "sha256": "aab0d047464994b8504a9b2c39271f052f7f7828e519b95b58b64a036da7d7d4",
-          "bytes": 8323056,
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/c5c217e5b6355eae8e9de1e799d7d205de17dce834b9b294c8d0707a2856ecd1",
+          "sha256": "c5c217e5b6355eae8e9de1e799d7d205de17dce834b9b294c8d0707a2856ecd1",
+          "bytes": 8323041,
           "fields": [
             "equipment.allowable_class",
             "equipment.allowable_race",
@@ -2830,9 +2830,9 @@
         },
         {
           "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0003.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/232bf4ef5f424a697a05260c7a02100fffee6bf05abccf8dd5847705e00f9a20",
-          "sha256": "232bf4ef5f424a697a05260c7a02100fffee6bf05abccf8dd5847705e00f9a20",
-          "bytes": 8322961,
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/f2b531ce4f37009e12502fd67d46b751d02792ebe04d1b9e447bb950bdb51386",
+          "sha256": "f2b531ce4f37009e12502fd67d46b751d02792ebe04d1b9e447bb950bdb51386",
+          "bytes": 8323099,
           "fields": [
             "equipment.allowable_class",
             "equipment.allowable_race",
@@ -2853,9 +2853,9 @@
         },
         {
           "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0004.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/7cc3785de412b0537a462993064ee02535563c49f5001498323f3a0161c1eb69",
-          "sha256": "7cc3785de412b0537a462993064ee02535563c49f5001498323f3a0161c1eb69",
-          "bytes": 8322928,
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/ee2c55c4cc847321efca63a6117ce7ae94cb773223508a4d295de12d5e931d71",
+          "sha256": "ee2c55c4cc847321efca63a6117ce7ae94cb773223508a4d295de12d5e931d71",
+          "bytes": 8322915,
           "fields": [
             "equipment.allowable_class",
             "equipment.allowable_race",
@@ -2876,9 +2876,9 @@
         },
         {
           "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0005.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/468f8ab487272be766c074af60f1e4b1cd72fe9f1bb8c228d48e58094992a1f7",
-          "sha256": "468f8ab487272be766c074af60f1e4b1cd72fe9f1bb8c228d48e58094992a1f7",
-          "bytes": 8322968,
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/ec96662e07af236a74073fdda30db379cc5e2c4cba025ac49c9af99b941c82b2",
+          "sha256": "ec96662e07af236a74073fdda30db379cc5e2c4cba025ac49c9af99b941c82b2",
+          "bytes": 8322909,
           "fields": [
             "equipment.allowable_class",
             "equipment.allowable_race",
@@ -2899,9 +2899,9 @@
         },
         {
           "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0006.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/65c6ee028d117b5e50a680605371de2c7ad1bde4e76b26d64cbc75619de9d282",
-          "sha256": "65c6ee028d117b5e50a680605371de2c7ad1bde4e76b26d64cbc75619de9d282",
-          "bytes": 8323018,
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/c94c7310d6fcf9ac42845346526916d4d2ffcd01bb191abcabe0373f7807ae2e",
+          "sha256": "c94c7310d6fcf9ac42845346526916d4d2ffcd01bb191abcabe0373f7807ae2e",
+          "bytes": 8322912,
           "fields": [
             "equipment.allowable_class",
             "equipment.allowable_race",
@@ -2917,6 +2917,20 @@
             "equipment.sell_price",
             "equipment.stats",
             "equipment.subclass_id",
+            "geography.exploration_level",
+            "geography.faction_group_mask",
+            "geography.map_id",
+            "geography.name",
+            "geography.parent_id"
+          ],
+          "transformation": "knowledge_v1"
+        },
+        {
+          "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0007.json",
+          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/588b1e5ded6a6ff7fdbde949900e6199a325a7d8a52beca871de2987011da7cf",
+          "sha256": "588b1e5ded6a6ff7fdbde949900e6199a325a7d8a52beca871de2987011da7cf",
+          "bytes": 1319954,
+          "fields": [
             "geography.area_id",
             "geography.exploration_level",
             "geography.faction_group_mask",
@@ -2931,19 +2945,6 @@
             "geography.ui_map_id",
             "geography.ui_max",
             "geography.ui_min",
-            "travel.faction",
-            "travel.name",
-            "travel.position",
-            "travel.world"
-          ],
-          "transformation": "knowledge_v1"
-        },
-        {
-          "path": "gen_world_db2/wow_forever/1.60.1.70245/part-0007.json",
-          "url": "https://github.com/Laymer/Navzeroth/blob/main/content/source-materials/objects/34c029c1adacf00b6996f52df9e014b828777aa53a20ce257e34dc026416aed1",
-          "sha256": "34c029c1adacf00b6996f52df9e014b828777aa53a20ce257e34dc026416aed1",
-          "bytes": 1111546,
-          "fields": [
             "travel.cost",
             "travel.faction",
             "travel.from_node",

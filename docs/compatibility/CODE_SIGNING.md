@@ -15,7 +15,7 @@ by [SignPath Foundation](https://signpath.org/).
   built from this repository by the `Windows package` workflow on a version tag.
   The application executable and uninstaller inside the installer aren't signed
   separately (see Limitations).
-- Committers and reviewers: [the repository's collaborators](https://github.com/Laymer/Navzeroth/graphs/contributors).
+- Committers and reviewers: [the repository's collaborators](https://github.com/Mytikas-Monster/Navzeroth/graphs/contributors).
   Changes reach `main` through pull requests that must pass the nine required
   checks; the owner reviews them (branch protection doesn't enforce reviews).
 - Approvers: the project owner, [Laymer](https://github.com/Laymer), approves every
@@ -65,10 +65,10 @@ they fit and adjust to the form's actual fields.
 | Question | Answer |
 | --- | --- |
 | Project name | Azeroth Navigator (Navzeroth) |
-| Repository | https://github.com/Laymer/Navzeroth (public) |
+| Repository | https://github.com/Mytikas-Monster/Navzeroth (public) |
 | Licence | BSD-3-Clause (OSI-approved), no commercial dual licence |
-| Home page | https://laymer.github.io/Navzeroth/ (has the "Code signing policy" section) |
-| Download page | https://github.com/Laymer/Navzeroth/releases (latest: 0.9.2 developer prerelease) |
+| Home page | https://mytikas-monster.github.io/Navzeroth/ (has the "Code signing policy" section) |
+| Download page | https://github.com/Mytikas-Monster/Navzeroth/releases (latest: 0.9.2 developer prerelease) |
 | Description | Offline Windows desktop planner and in-game addon for World of Warcraft: Forever: imports addon snapshots, plans quest routes, compares gear, and records sessions. The app makes no network connections; the installer downloads Microsoft's WebView2 bootstrapper only if WebView2 is missing. No memory reading, injection or input automation. |
 | What to sign | One NSIS installer per release, `AzerothNavigator-<version>-x64-setup.exe`, built by GitHub Actions (`.github/workflows/package-windows.yml`) on a version tag |
 | Build system | GitHub Actions on GitHub-hosted `windows-2025` runners, from tagged source |
@@ -95,7 +95,7 @@ or get SignPath's answer before relying on signing for 1.0.0.
 The terms also want the phrase "Code signing policy" on the download page. The
 current download page is the 0.9.2 release, which doesn't link it yet: before
 applying, add a line such as "Code signing policy:
-https://laymer.github.io/Navzeroth/#code-signing" to the 0.9.2 release description
+https://mytikas-monster.github.io/Navzeroth/code-signing.html" to the 0.9.2 release description
 on GitHub (the description only; the release assets stay unchanged).
 
 After acceptance, also set on SignPath's side what its terms require: file metadata
@@ -115,7 +115,7 @@ of SignPath's terms.
 
 1. **Apply** at <https://signpath.org/> (SignPath Foundation, free for open source).
    Use the public repository URL, the BSD-3-Clause licence, the release page
-   <https://github.com/Laymer/Navzeroth/releases> and this page as the code signing
+   <https://github.com/Mytikas-Monster/Navzeroth/releases> and this page as the code signing
    policy. Use multi-factor authentication on your GitHub and SignPath accounts.
 2. After approval, in SignPath: create the project (slug `Navzeroth`, or set
    `SIGNPATH_PROJECT_SLUG`), link the GitHub repository as a trusted build system,

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "registry_sha256": "5b26dda2bceda64374f0312d1051ed1a7cbcadae9757741f51b1c2179409adf2",
+  "registry_sha256": "e5b5d1caf179134d26bbf83fc248fc2f3b00ed62c3c51eb6634e2b1d221f11de",
   "method": "github_commit_metadata",
   "reviewer": "Codex /root",
   "reviewed_on": "2026-10-15",
